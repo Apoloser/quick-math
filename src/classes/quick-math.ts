@@ -25,11 +25,11 @@ export class QuickMath {
 		return QuickMath.resolve(this._rpn);
 	}
 
-	public static calculate(data: string) {
+	public static calculate(data: string): number {
 		return QuickMath.resolve(Parser.stringToRPN(data));
 	}
 
-	public static resolve(rpn: Expression) {
+	public static resolve(rpn: Expression): number {
 		let stack = [];
 		let percent;
 
@@ -54,6 +54,6 @@ export class QuickMath {
 			}
 		}
 
-		return stack[ 0 ];
+		return stack[ 0 ] as number;
 	}
 }
