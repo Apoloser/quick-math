@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    "coverage": "nyc mocha -r ts-node/register tests/**/*.test.ts && nyc report --reporter=json"
   },
   "author": "Pavel Kornienko",
   "license": "MIT",
