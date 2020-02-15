@@ -1,6 +1,6 @@
 # Quick-math
-[![codecov](https://codecov.io/gh/Apoloser/quick-math/branch/master/graph/badge.svg)](https://codecov.io/gh/Apoloser/quick-math)
-[![Build Status](https://travis-ci.org/Apoloser/quick-math.svg?branch=master)](https://travis-ci.org/Apoloser/quick-math)
+[![codecov](https://codecov.io/gh/dev-syco/quick-math/branch/master/graph/badge.svg)](https://codecov.io/gh/dev-syco/quick-math)
+[![Build Status](https://travis-ci.org/dev-syco/quick-math.svg?branch=master)](https://travis-ci.org/dev-syco/quick-math)
 ### What is this
 Implementation of [shunting-yard algorithm](http://en.wikipedia.org/wiki/Shunting-yard_algorithm) to calculate string as mathematical expression.
 ### How does this work?
