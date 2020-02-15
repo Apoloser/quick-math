@@ -1,9 +1,8 @@
 language: node_js
-sudo: false
 node_js:
   - 12
 install:
   - npm install
 script:
-  - npm coverage
+  - npm run coverage
   - codecov -f coverage/*.json
