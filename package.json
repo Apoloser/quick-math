@@ -1,6 +1,6 @@
 {
   "name": "@dev-syco/quick-math",
-  "version": "1.0.1",
+  "version": "1.0.11",
   "description": "Quick calculation from string",
   "repository": {
     "type": "git",

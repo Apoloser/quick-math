@@ -5,12 +5,6 @@ import { Parser } from './parser';
 import { ErrorMessage } from './error-message';
 
 export class QuickMath {
-  public constructor(data?: string) {
-    if (data) {
-      this.expression = data;
-    }
-  }
-
   private _rpn: Expression = [];
 
   public get rpn(): string {
@@ -19,6 +13,12 @@ export class QuickMath {
 
   public set expression(data: string) {
     this._rpn = Parser.stringToRPN(data);
+  }
+
+  public constructor(data?: string) {
+    if (data) {
+      this.expression = data;
+    }
   }
 
   public static calculate(data: string): number {
