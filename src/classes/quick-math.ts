@@ -5,55 +5,55 @@ import { Parser } from './parser';
 import { ErrorMessage } from './error-message';
 
 export class QuickMath {
-	private _rpn: Expression = [];
+  public constructor(data?: string) {
+    if (data) {
+      this.expression = data;
+    }
+  }
 
-	public get rpn(): string {
-		return this._rpn.map(i => i instanceof Operator && i.token || i).join('');
-	}
+  private _rpn: Expression = [];
 
-	public set expression(data: string) {
-		this._rpn = Parser.stringToRPN(data);
-	}
+  public get rpn(): string {
+    return this._rpn.map(i => i instanceof Operator && i.token || i).join('');
+  }
 
-	public constructor(data?: string) {
-		if (data) {
-			this.expression = data;
-		}
-	}
+  public set expression(data: string) {
+    this._rpn = Parser.stringToRPN(data);
+  }
 
-	public calculate() {
-		return QuickMath.resolve(this._rpn);
-	}
+  public static calculate(data: string): number {
+    return QuickMath.resolve(Parser.stringToRPN(data));
+  }
 
-	public static calculate(data: string): number {
-		return QuickMath.resolve(Parser.stringToRPN(data));
-	}
+  public static resolve(rpn: Expression): number {
+    let stack = [];
+    let percent;
 
-	public static resolve(rpn: Expression): number {
-		let stack = [];
-		let percent;
+    for (let item of rpn) {
+      if (item instanceof Percent) {
+        percent = item;
+        continue;
+      }
+      if (item instanceof Operator) {
+        let operator = item;
+        if (percent) {
+          stack.push(item);
+          operator = percent;
+          percent = null;
+        }
+        stack.push(operator.method.apply(this, stack.splice(-(operator.paramsCount)) as [ number, number, Operator ]));
+      } else {
+        if (percent) {
+          throw new ErrorMessage(Errors.PERCENT_CANT_BE_FIRST);
+        }
+        stack.push(item);
+      }
+    }
 
-		for (let item of rpn) {
-			if (item instanceof Percent) {
-				percent = item;
-				continue;
-			}
-			if (item instanceof Operator) {
-				let operator = item;
-				if (percent) {
-					stack.push(item);
-					operator = percent;
-					percent = null;
-				}
-				stack.push(operator.method.apply(this, stack.splice(-(operator.paramsCount)) as [ number, number, Operator ]));
-			} else {
-				if (percent) {
-					throw new ErrorMessage(Errors.PERCENT_CANT_BE_FIRST);
-				}
-				stack.push(item);
-			}
-		}
+    return stack[ 0 ] as number;
+  }
 
-		return stack[ 0 ] as number;
-	}
+  public calculate() {
+    return QuickMath.resolve(this._rpn);
+  }
 }

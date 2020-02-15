@@ -2,6 +2,13 @@
   "name": "@dev-syco/quick-math",
   "version": "1.0.1",
   "description": "Quick calculation from string",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-syco/quick-math"
+  },
+  "bugs": {
+    "url": "https://github.com/dev-syco/quick-math/issues"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
@@ -20,6 +27,7 @@
     "codecov": "^3.6.5",
     "mocha": "^7.0.1",
     "nyc": "^15.0.0",
+    "prettier": "1.19.1",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5",
