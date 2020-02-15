@@ -1,1 +1,1 @@
-export { QuickMath } from './classes/quick-math';
+export * from './classes/quick-math';
