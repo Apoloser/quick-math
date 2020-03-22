@@ -23,7 +23,7 @@ export enum OperatorAssoc {
 
 export enum Errors {
   DIVISION_BY_ZERO = 'Division by zero',
-  OPERATOR_NOT_SUPPORTED = 'Operator \'{number}\' not supported',
+  OPERATOR_NOT_SUPPORTED = 'Operator \'{operator}\' not supported',
   TOO_MANY_OPEN_PARENTHESES = 'Unclosed parentheses',
   TOO_MANY_CLOSE_PARENTHESES = 'Too many close parentheses',
   NUMBER_NOT_VALID = 'Number \'{number}\' not valid',

@@ -1,6 +1,6 @@
 {
   "name": "@dev-syco/quick-math",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Quick calculation from string",
   "repository": {
     "type": "git",
@@ -20,6 +20,17 @@
   "engines": {
     "node": ">=4.0.0"
   },
+  "keywords": [
+    "shunting yard",
+    "rpn",
+    "reverse polish motation",
+    "algorithm",
+    "infix",
+    "postfix",
+    "math",
+    "expressions",
+    "transformation"
+  ],
   "devDependencies": {
     "@types/chai": "^4.2.8",
     "@types/mocha": "^7.0.1",
@@ -32,6 +43,7 @@
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "minimist": ">=1.2.2"
   }
 }
