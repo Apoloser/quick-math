@@ -1,6 +1,6 @@
 {
   "name": "@dev-syco/quick-math",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Quick calculation from string",
   "repository": {
     "type": "git",
@@ -18,12 +18,12 @@
   "author": "Pavel Kornienko",
   "license": "MIT",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   },
   "keywords": [
     "shunting yard",
     "rpn",
-    "reverse polish motation",
+    "reverse polish notation",
     "algorithm",
     "infix",
     "postfix",
